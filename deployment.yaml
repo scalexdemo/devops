@@ -1,38 +1,38 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-name: hello
+name: demo
 labels:
-  app: hello
+  app: demo
 spec:
 strategy:
   type: Recreate
 template:
   metadata:
     labels:
-      app: hello
-      tier: hello
+      app: demo
+      tier: demo
   spec:
     containers:
-    - name: hello
-      image: DOCKER-HUB-USERNAME/hello:latest
+    - name: demo
+      image: scalexdemo/demo:latest
       imagePullPolicy: Always
       ports:
       - containerPort: 5000
-        name: hello
+        name: demo
 
 ---
 apiVersion: v1
 kind: Service
 metadata:
-name: hello
+name: demo
 labels:
-  app: hello
+  app: demo
 spec:
 ports:
   - port: 5000
     targetPort: 5000
 selector:
-  app: hello
-  tier: hello
+  app: demo
+  tier: demo
 type: LoadBalancer

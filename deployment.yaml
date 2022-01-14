@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: scalex-demo
-          image: scalexdemo/scalex-demo:latest
+          image: scalexdemo/scalex-demo:scalex-demo
           ports:
             - containerPort: 8080
           env:

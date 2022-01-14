@@ -6,7 +6,7 @@ spec:
   replicas: 2
   type: RollingUpdate
   rollingUpdate:
-     maxUnavailable: 0
+     maxUnavailable: 1
      maxSurge: 1
   selector:
     matchLabels:
@@ -35,11 +35,5 @@ spec:
   ports:
     - port: 80
       targetPort: 8080
-  spec:
-      strategy:
-        type: RollingUpdate
-        rollingUpdate:
-            maxUnavailable: 0
-            maxSurge: 1    
   selector:
     app: demo

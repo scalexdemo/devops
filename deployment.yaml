@@ -15,8 +15,6 @@ spec:
       containers:
         - name: scalex-demo
           image: scalexdemo/scalex-demo:scalex-demo
-          imagePullSecrets:
-            - name: docker-hub
           ports:
             - containerPort: 8080
           env:

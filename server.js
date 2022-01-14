@@ -8,7 +8,7 @@ const PORT = process.env.PORT || 8080;
 // App
 const app = express();
 app.get('/', function (req, res) {
-  res.send('Hello, wellcome to eks\n');
+  res.send('Hello, wellcome to Kubernetes\n');
 });
 
 app.listen(PORT);

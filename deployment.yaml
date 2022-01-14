@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: scalex-demo
+  name: aws-node
 spec:
   replicas: 2
   selector:
@@ -10,7 +10,7 @@ spec:
   template:
     metadata:
       labels:
-        app: scalex-demo
+        app: aws-node
     spec:
       containers:
         - name: scalex-demo
@@ -24,11 +24,11 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: scalex-demo
+  name: aws-node
 spec:
   type: LoadBalancer
   ports:
     - port: 80
       targetPort: 8080
   selector:
-    app: scalex-demo
+    k8s-app: aws-node

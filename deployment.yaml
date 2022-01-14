@@ -15,7 +15,7 @@ template:
   spec:
     containers:
     - name: demo
-      image: scalexdemo/demo:latest
+      image: scalexdemo/scalex-demo:latest
       imagePullPolicy: Always
       ports:
       - containerPort: 5000

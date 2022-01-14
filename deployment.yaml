@@ -20,7 +20,6 @@ spec:
       containers:
         - name: scalex-demo
           image: scalexdemo/scalex-demo:scalex-demo
-          imagePullPolicy: Always
           ports:
             - containerPort: 8080
           env:

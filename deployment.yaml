@@ -10,7 +10,7 @@ spec:
   template:
     metadata:
       labels:
-        app: 
+        k8s-app: aws-node 
     spec:
       containers:
         - name: scalex-demo

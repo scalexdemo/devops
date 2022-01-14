@@ -3,36 +3,36 @@ kind: Deployment
 metadata:
 name: demo
 labels:
-  app: demo
+  app: scalex-demo
 spec:
 strategy:
   type: Recreate
 template:
   metadata:
     labels:
-      app: demo
-      tier: demo
+      app: scalex-demo
+      tier: scalex-demo
   spec:
     containers:
-    - name: demo
+    - name: scalex-demo
       image: scalexdemo/scalex-demo:latest
       imagePullPolicy: Always
       ports:
       - containerPort: 5000
-        name: demo
+        name: scalex-demo
 
 ---
 apiVersion: v1
 kind: Service
 metadata:
-name: demo
+name: scalex-demo
 labels:
-  app: demo
+  app: scalex-demo
 spec:
 ports:
   - port: 5000
     targetPort: 5000
 selector:
-  app: demo
-  tier: demo
+  app: scalex-demo
+  tier: scalex-demo
 type: LoadBalancer
